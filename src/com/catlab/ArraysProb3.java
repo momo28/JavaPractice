@@ -5,11 +5,12 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Created by black on 6/7/17.
+ * Created by Momo on 6/7/17.
  */
 public class ArraysProb3 {
 
     //3. Given 2 strings, write a method to decide if one is a permutation of the other.
+
     protected static void problem3(){
         System.out.printf("3. Given 2 strings, write a method to decide if one is a permutation of the other.%n%n");
         testStringPermutation();
@@ -22,6 +23,7 @@ public class ArraysProb3 {
             @NotNull String str1,
             @NotNull String str2){
 
+        // Test some simple scenarios, if they pass, then assure we pick the larger string to compare with.
         if(str1.isEmpty() || str2.isEmpty()){
             return false;
         }

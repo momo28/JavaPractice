@@ -1,11 +1,11 @@
 package com.catlab;
 
 import java.util.ArrayDeque;
+import java.util.Stack;
 import java.util.Arrays;
-import java.util.Queue;
 
 /**
- * Created by black on 6/18/17.
+ * Created by Momo on 6/18/17.
  */
 public class ArraysProb4 {
 
@@ -19,8 +19,13 @@ public class ArraysProb4 {
 
     private static char[] simpleHtmlEncode (char[] text, int textLength){
         int stringIterator=0;
-        Queue<Character> charQueue = new ArrayDeque<>();
+        ArrayDeque<Character> charQueue = new ArrayDeque<>();
 
+        /*
+            Go through the string, and use a queue to store all Chars once the first space is encountered.  If other spaces
+        are encountered, inject '%20' instead of a space into the queue, and finally transfer all values in the queue back
+        into the original string.
+        */
         while(stringIterator < textLength){
             if(text[stringIterator] == ' ' && charQueue.isEmpty()){
                 text[stringIterator] = '%';
@@ -45,7 +50,38 @@ public class ArraysProb4 {
         return text;
     }
 
-    private static void testSimpleHtmlEncode(){}
+    private static void testSimpleHtmlEncode(){
+        String testString = "Mr John Smith    ";
+        Stack<Integer> arrayIndexStack = new Stack<>();
+        boolean actualString = false;
+
+        // Get the indexes which have a space in the original string, avoiding the end spaces.
+        for(int i=testString.length()-1; i>=0; i--){
+            if(!actualString &&  testString.charAt(i) != ' '){
+                actualString = true;
+            }
+
+            if(actualString && testString.charAt(i) == ' '){
+                arrayIndexStack.push(i);
+            }
+        }
+
+        // Call function to do a simpleHTMLEncode
+        char [] testCharArr= simpleHtmlEncode(testString.toCharArray(), testString.length());
+        int arrayIndexOffset = 0;
+
+        // Look that '%20' is present at the array index of the original string + the offset of other spaces
+        while(!arrayIndexStack.isEmpty()){
+            int arrayIndex = arrayIndexStack.pop() + arrayIndexOffset;
+
+            assert(testCharArr[arrayIndex] == '%');
+            assert(testCharArr[arrayIndex + 1] == '2');
+            assert(testCharArr[arrayIndex + 2] == '0');
+
+            arrayIndexOffset += 2;
+        }
+
+    }
 
     private static void testSimpleHtmlEncodeVisually(){
         String testString = "Mr John Smith    ";

@@ -7,11 +7,11 @@ import java.util.Arrays;
 /**
  * Created by Momo on 6/18/17.
  */
-public class ArraysProb4 {
+class ArraysProb4 {
 
     //4. Write a method to replace all spaces in a string with '%20'. Use a Java character array.
 
-    protected static void problem4(){
+    static void problem4(){
         System.out.println("\n4. Write a method to replace all spaces in a string with %20. Use a Java character array.\n");
         testSimpleHtmlEncode();
         testSimpleHtmlEncodeVisually();

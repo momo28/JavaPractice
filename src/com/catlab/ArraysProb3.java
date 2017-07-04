@@ -7,11 +7,11 @@ import java.util.Random;
 /**
  * Created by Momo on 6/7/17.
  */
-public class ArraysProb3 {
+class ArraysProb3 {
 
     //3. Given 2 strings, write a method to decide if one is a permutation of the other.
 
-    protected static void problem3(){
+    static void problem3(){
         System.out.printf("3. Given 2 strings, write a method to decide if one is a permutation of the other.%n%n");
         testStringPermutation();
 

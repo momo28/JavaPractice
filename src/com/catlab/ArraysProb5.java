@@ -5,7 +5,7 @@ import com.sun.istack.internal.NotNull;
 /**
  * Created by Momo28 on 7/4/17.
  */
-class ArrayProb5 {
+class ArraysProb5 {
 
     /*
     5. Implement a method to perform basic string compression using the counts of repeated characters.  For example, the

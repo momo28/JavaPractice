@@ -3,7 +3,7 @@ package com.catlab;
 import static com.catlab.ArraysProb1.problem1;
 import static com.catlab.ArraysProb3.problem3;
 import static com.catlab.ArraysProb4.problem4;
-import static com.catlab.ArrayProb5.problem5;
+import static com.catlab.ArraysProb5.problem5;
 
 /**
  * Created by Momo on 6/4/17.

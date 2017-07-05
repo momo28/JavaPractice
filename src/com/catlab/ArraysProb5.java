@@ -18,7 +18,8 @@ class ArraysProb5 {
                 "   string 'aabcccccaaa' would become 'a2b1c5a3.  If the compressed string would bot become smaller than the original string,\n" +
                 "   your method should return the original string.  You can assume the string has only upper and lower case letters (a-z).\n");
 
-        testStringCompression();
+        testStringCompression("aabcccccaaa");
+        testStringCompression("Coooool");
 
         // Visual Tests
         testStringCompressionVisually("aabcccccaaa");
@@ -76,7 +77,44 @@ class ArraysProb5 {
         }
     }
 
-    private static void testStringCompression(){
+    // Uncompress method for testing
+    private static String simpleStringUncompressAlphaNonNumeric(@NotNull String compressedString){
+
+        // if compressed string is longer than 1 char, then we have something to uncompress
+        if(compressedString.length() > 1){
+            StringBuilder unCompressedString = new StringBuilder();
+            char currentChar;
+
+            // Build the uncompressed string in a string buffer
+            for(int i = 0; i < compressedString.length(); i+=2){
+                currentChar = compressedString.charAt(i);
+                for(int j = 0; j <  Character.getNumericValue(compressedString.charAt(i+1)); j++){
+                    unCompressedString.append(currentChar);
+                }
+            }
+
+            return unCompressedString.toString();
+        }
+        else{
+            return compressedString;
+        }
+
+    }
+
+    private static void testStringCompression(String stringToCompress){
+        String compressedString = simpleStringCompressAlphaNonNumeric(stringToCompress);
+
+        // assert that the compressed string is smaller or equal to the original string's length
+        assert(compressedString.length() <= stringToCompress.length());
+
+        // assert that if the compressed string is equal in length of the orignial string, we return the original string
+        if(compressedString.length() == stringToCompress.length()){
+            assert(compressedString.equals(stringToCompress));
+        }
+        // assert that the compressed string is correctly compressed, by reproducing the origninal string from the compressed string
+        else if (compressedString.length() < stringToCompress.length()){
+            assert(stringToCompress.equals(simpleStringUncompressAlphaNonNumeric(compressedString)));
+        }
     }
 
     private static void testStringCompressionVisually(String stringToCompress){

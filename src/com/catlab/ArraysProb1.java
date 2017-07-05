@@ -7,12 +7,12 @@ import java.util.Random;
 /**
  * Created by Momo on 6/7/17.
  */
-public class ArraysProb1 {
+class ArraysProb1 {
 
     // 1. Implement an algorithm to determine if a string has all unique chars.
     // What if you can not use additional data structures?
 
-    protected static void problem1(){
+    static void problem1(){
         System.out.printf("1. Implement an algorithm to determine if a string has all unique chars. " +
                 "What if you can not use additional data structures?%n%n");
 

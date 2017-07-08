@@ -85,9 +85,13 @@ class ArraysProb4 {
 
     private static void testSimpleHtmlEncodeVisually(){
         String testString = "Mr John Smith    ";
-
         char [] testCharArr= simpleHtmlEncode(testString.toCharArray(), testString.length());
         System.out.printf(testString + "%n");
         System.out.println(Arrays.toString(testCharArr));
+
+        String testString2 = "I can eat a burger        ";
+        char [] testCharArr2= simpleHtmlEncode(testString2.toCharArray(), testString2.length());
+        System.out.printf(testString2 + "%n");
+        System.out.println(Arrays.toString(testCharArr2));
     }
 }

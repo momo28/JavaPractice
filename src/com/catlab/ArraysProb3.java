@@ -15,7 +15,7 @@ class ArraysProb3 {
         System.out.printf("3. Given 2 strings, write a method to decide if one is a permutation of the other.%n%n");
         testStringPermutation();
 
-        String[] testStrings = {"a","adam", "", "Maurcio", "tale", "la", "tin", "maury", "in", "bin", "nit", "d"};
+        String[] testStrings = {"a", "", "in", "bin", "nit"};
         testStringPermutaionVisually(testStrings);
     }
 

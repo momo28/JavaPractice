@@ -14,7 +14,7 @@ class ArraysProb5 {
     */
 
     static void problem5(){
-        System.out.println("\n4. Implement a method to perform basic string compression using the counts of repeated characters.  For example, the\n" +
+        System.out.println("\n5. Implement a method to perform basic string compression using the counts of repeated characters.  For example, the\n" +
                 "   string 'aabcccccaaa' would become 'a2b1c5a3.  If the compressed string would bot become smaller than the original string,\n" +
                 "   your method should return the original string.  You can assume the string has only upper and lower case letters (a-z).\n");
 
